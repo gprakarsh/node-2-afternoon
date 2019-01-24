@@ -28,9 +28,8 @@ module.exports={
     },
     update:(req,res)=>{
         const {id} = req.params;
-        const {description} = req.query;
-        console.log(description);
-        req.app.get('db').update_product([id,description]).then(()=>{
+        const {desc} = req.query;
+        req.app.get('db').update_product([id,desc]).then(()=>{
          res.status(200).json("Updated Product Description")
         })
         
